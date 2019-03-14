@@ -86,6 +86,11 @@ namespace Accounting.App
             {
                 int customerid = int.Parse(dgCustomer.CurrentRow.Cells[0].Value.ToString());
                 frmAddOrEditCustomr frmAddOrEdit = new frmAddOrEditCustomr();
+                frmAddOrEdit.customerId = customerid;
+                if (frmAddOrEdit.ShowDialog() == DialogResult.OK)
+                {
+                    BindGrid();
+                }
 
             }
         }

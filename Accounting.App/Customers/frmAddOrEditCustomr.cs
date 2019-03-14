@@ -62,5 +62,19 @@ namespace Accounting.App.Customers
 
             }
         }
+
+        private void frmAddOrEditCustomr_Load(object sender, EventArgs e)
+        {
+            if (customerId != 0)
+            {
+                this.Text = "ویرایش شخص !";
+                btnSave.Text = "ویرایش";
+                var customer = db.CustomerRepository.GetCustomerById(customerId);
+                txtName.Text = customer.FullName;
+                txtEmail.Text = customer.Email;
+                txtMobile.Text = customer.Mobile;
+                txtAddress.Text = customer.Address;
+            }
+        }
     }
 }

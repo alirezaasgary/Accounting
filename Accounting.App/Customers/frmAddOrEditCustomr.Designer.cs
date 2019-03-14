@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddOrEditCustomr));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSelectPhoto = new System.Windows.Forms.Button();
+            this.pcCustomer = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -42,13 +43,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pcCustomer = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.requiredFieldValidator1 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.requiredFieldValidator2 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcCustomer)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -71,6 +71,16 @@
             this.btnSelectPhoto.Text = "انتخاب تصویر";
             this.btnSelectPhoto.UseVisualStyleBackColor = true;
             this.btnSelectPhoto.Click += new System.EventHandler(this.btnSelectPhoto_Click);
+            // 
+            // pcCustomer
+            // 
+            this.pcCustomer.Image = global::Accounting.App.Properties.Resources.boss__1_;
+            this.pcCustomer.Location = new System.Drawing.Point(6, 20);
+            this.pcCustomer.Name = "pcCustomer";
+            this.pcCustomer.Size = new System.Drawing.Size(197, 205);
+            this.pcCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcCustomer.TabIndex = 8;
+            this.pcCustomer.TabStop = false;
             // 
             // groupBox2
             // 
@@ -154,16 +164,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "نام :";
             // 
-            // pcCustomer
-            // 
-            this.pcCustomer.Image = global::Accounting.App.Properties.Resources.boss__1_;
-            this.pcCustomer.Location = new System.Drawing.Point(6, 20);
-            this.pcCustomer.Name = "pcCustomer";
-            this.pcCustomer.Size = new System.Drawing.Size(197, 205);
-            this.pcCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcCustomer.TabIndex = 8;
-            this.pcCustomer.TabStop = false;
-            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(375, 277);
@@ -202,10 +202,11 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "افزودن شخص جدید";
+            this.Load += new System.EventHandler(this.frmAddOrEditCustomr_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcCustomer)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcCustomer)).EndInit();
             this.ResumeLayout(false);
 
         }
