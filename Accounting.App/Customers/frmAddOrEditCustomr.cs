@@ -52,13 +52,19 @@ namespace Accounting.App.Customers
                     Mobile = txtMobile.Text,
                     CustomerImage = imagName
                 };
-
-                db.CustomerRepository.InsertCustomer(customers);
+                if (customerId == 0)
+                {
+                    db.CustomerRepository.InsertCustomer(customers);
+                   
+                }
+                else
+                {
+                    customers.CustomerID = customerId;
+                    db.CustomerRepository.UpdateCustomer(customers);
+                   
+                }
                 db.save();
                 DialogResult = DialogResult.OK;
-
-
-
 
             }
         }
@@ -74,6 +80,7 @@ namespace Accounting.App.Customers
                 txtEmail.Text = customer.Email;
                 txtMobile.Text = customer.Mobile;
                 txtAddress.Text = customer.Address;
+                pcCustomer.ImageLocation = Application.StartupPath + "/Images/" + customer.CustomerImage;
             }
         }
     }

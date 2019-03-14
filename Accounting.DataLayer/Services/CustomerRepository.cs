@@ -78,6 +78,13 @@ namespace Accounting.DataLayer.Services
         {
             try
             {
+                var local = db.Set<Customers>()   //در صورتی که از یوزینگ استفاده کنیم این کدها را لازم نداریم.
+                         .Local
+                         .FirstOrDefault(f => f.CustomerID == customer.CustomerID);
+                if (local != null)
+                {
+                    db.Entry(local).State = EntityState.Detached;
+                }
                 //db.Customers.Add(customer);
                 db.Entry(customer).State = EntityState.Modified;
                 return true;
