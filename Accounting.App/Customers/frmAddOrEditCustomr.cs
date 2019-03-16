@@ -52,6 +52,7 @@ namespace Accounting.App.Customers
                     Mobile = txtMobile.Text,
                     CustomerImage = imagName
                 };
+
                 if (customerId == 0)
                 {
                     db.CustomerRepository.InsertCustomer(customers);
